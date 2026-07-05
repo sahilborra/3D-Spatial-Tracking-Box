@@ -21,8 +21,10 @@ Hardware Used :
 Challenges Faced : 
 1. Echoes and Ghost signals
 Initially, I tried firing all sensors at the exact same time, but the readings were very inconsistent. Since all sensors were emitting signals in the same 40 kHz frequency, the sound waves would interfere with other sensors' readings.
+
 *The fix* : I used a technique called Time Division Multiplexing, which essentially makes the Arduino fire each sensor one by one in a loop, pausing for 10 to 15 milliseconds in between each pulse. This give the previous echoes enough time to die down before the next sensor looks for a signal.
 
 2. Tracking Uneven Objects
 Flat surfaces are ideal for ultrasonic sensors because the sound bounces back nicely. However, tracking a ball or a moving hand is different. In my experiments with uneven objects, huge spikes or random zeroes were seen in the data. This happens because sound waves hit curves and scatter in random directions.
+
 *The fix* : I added code to automatically filter out impossible readings. For example, if a sensor says the object is 50 cm away, the code ignores it because the box is only 30 cm max
