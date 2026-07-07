@@ -1,3 +1,4 @@
+// This code was written using Gemini AI. Create a Processing program which renders 3D tracking data using the P3D renderer and the serial port to collect this data. The program will create an 800x800 3D window, initialize the serial connection at 9600 baud rate, open the third serial port available, and asynchronously split the incoming strings into three float variables corresponding to the X, Y, and Z values. The `draw()` function should render a 400 units bounding box, a floor grid, and colored circle sensors on the left, back, and top surfaces of the cube. Next, convert the raw sensor readings, which go from 0 to 30, into the 3D coordinate system where values are from -200 to 200, so that a yellow sphere and its floor shadow reflect the actual sensor location. Lastly, add mouse drag interaction in `mouseDragged()` method.
 import processing.serial.*;
 
 Serial myPort;
@@ -20,42 +21,38 @@ void draw() {
   rotateX(rotX);
   rotateY(rotY);
   
-  // Wireframe Box
   noFill();
   stroke(80);       
   strokeWeight(1);
   box(400);          
   
-  // Floor Grid
   stroke(50);
   for(int i = -200; i <= 200; i += 40) {
     line(i, 200, -200, i, 200, 200); 
     line(-200, 200, i, 200, 200, i);
   }
   
-  // --- VISUAL SENSOR INDICATORS ---
-  // Blue (Ceiling)
   pushMatrix(); translate(0, -200, 0); rotateX(HALF_PI); fill(0, 100, 255); noStroke(); ellipse(0, 0, 25, 25); popMatrix();
-  // Green (Back Wall)
+
   pushMatrix(); translate(0, 0, -200); fill(0, 255, 100); noStroke(); ellipse(0, 0, 25, 25); popMatrix();
-  // Red (Left Wall)
+
   pushMatrix(); translate(-200, 0, 0); rotateY(HALF_PI); fill(255, 50, 50); noStroke(); ellipse(0, 0, 25, 25); popMatrix();
   
-  // --- LINEAR TRACKING LOGIC ---
-  // As x gets closer to 0 (close to left wall), mappedX stays near -200.
+
+
   float mappedX = map(x, 0, 30, -200, 200); 
   
-  // As y gets closer to 0 (close to back wall), mappedY stays near -200.
+
   float mappedY = map(y, 0, 30, -200, 200); 
   
-  // As z gets closer to 0 (close to ceiling), ball moves toward the ceiling (-200).
+ 
   float mappedZ = map(z, 0, 30, -200, 200); 
 
-  // Draw Floor Shadow
+
   fill(50, 50, 50, 150); noStroke();
   pushMatrix(); translate(mappedX, 199, mappedY); ellipse(0, 0, 20, 20); popMatrix();
 
-  // Draw Tracking Ball
+
   pushMatrix(); translate(mappedX, mappedZ, mappedY); fill(255, 255, 0); noStroke(); sphere(20); popMatrix();
 }
 
