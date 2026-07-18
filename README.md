@@ -1,4 +1,4 @@
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/g3pf11NpjxE/0.jpg)](https://www.youtube.com/watch?v=g3pf11NpjxE)
+[![Link to Demo Video](https://img.youtube.com/vi/g3pf11NpjxE/0.jpg)](https://www.youtube.com/watch?v=g3pf11NpjxE)
 
 # 3d Spatial Tracking Box
 
