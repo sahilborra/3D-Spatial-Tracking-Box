@@ -1,3 +1,5 @@
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/g3pf11NpjxE/0.jpg)](https://www.youtube.com/watch?v=g3pf11NpjxE)
+
 # 3d Spatial Tracking Box
 
 I have created a physical 3d tracking box I built from scratch using an Arduino Mega and three ultrasonic sensors. It tracks where an object is inside a 30cm x 30cm x 30cm space and displays it in a 3d visualization window coded in Processing (Java).
