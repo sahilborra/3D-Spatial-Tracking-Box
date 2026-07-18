@@ -1,0 +1,12 @@
+# Conclusion of this project
+
+This project taught me many new things. I learned how ultrasound sensors worked in extreme detail and also got to use them in a practical scenario which was in the 3D spatial tracking box. 
+
+However, from this project, I also came to the conclusion that ultrasound sensors are not very efficient at tracking an object. This is because ultrasound sensors shoot their signals in a certain FOV, meaning that there is often blind spots inside of the box in which the reading cannot be found, causing very strange or unnatural readings coming, because the object is not being detected at all. 
+
+After I came to this conclusion of the FOV being a limiting factor in the ultrasound sensor's function, I researched certain fixes to this issue. So for one fix to this, I saw a video made by Bitluni, B-I-T-L-U-N-I, in which he used an array of ultrasound sensors, which were like eight ultrasound sensors placed next to each other, and using this, he was able to kind of combine the FOVs of each of the sensors and increase the total FOV of the device as a whole. 
+
+After this, I discovered a device called an acoustic camera, which essentially uses a bunch of ultrasound receivers instead of transmitters to pinpoint specific frequency or signals inside of big machinery, which could indicate an issue in the machinery. So, for example, if there's like a leak in a pipe, it would emit a high-frequency sound, which would be detected by this acoustic camera.
+
+So that's what led me to research about the acoustic camera. 
+
